@@ -19,18 +19,18 @@ trait BotTest extends FlatSpecLike
 }
 
 class GithubClientSpec(_system: ActorSystem) extends TestKit(_system) with BotTest {
-    def this() = this(ActorSystem("GithubClientTestSystem"))
-    val bot = system.actorOf(Props(classOf[GithubClient]))
-    val timeout = 10.seconds
+  def this() = this(ActorSystem("GithubClientTestSystem"))
+  val bot = system.actorOf(Props(classOf[GithubClient]))
+  val timeout = 10.seconds
 
-    "GithubClient" should "find public repositories that exist" in {
-      val existingRepo = RepoRef("behaghel", "tumblishr")
-      bot ! Lookup(existingRepo)
-      expectMsg(timeout, Accessible(existingRepo))
-    }
-    it should "say when repository doesn't exist" in {
-      val nonRepo = RepoRef("behaghel", "xxx")
-      bot ! Lookup(nonRepo)
-      expectMsg(timeout, NotFound(nonRepo))
-    }
+  "GithubClient" should "find public repositories that exist" in {
+    val existingRepo = RepoRef("behaghel", "tumblishr")
+    bot ! Lookup(existingRepo)
+    expectMsg(timeout, Accessible(existingRepo))
+  }
+  it should "say when repository doesn't exist" in {
+    val nonRepo = RepoRef("behaghel", "xxx")
+    bot ! Lookup(nonRepo)
+    expectMsg(timeout, NotFound(nonRepo))
+  }
 }

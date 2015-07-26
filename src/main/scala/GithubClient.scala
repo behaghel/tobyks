@@ -40,6 +40,6 @@ class GithubClient extends Actor {
           Accessible(repoRef)
         else
           NotFound(repoRef)
-      } pipeTo sender
+      } pipeTo sender()
   }
 }

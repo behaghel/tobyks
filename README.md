@@ -11,6 +11,9 @@ You need 3 environment variables to be able to run it:
 - SLACK_WEBSOCKET_ID: a random base64 string
 - GITHUB_TOKEN: to access GitHub APIs, create one from your account
 
+You also need a mongo instance running locally (default port, no auth
+…for now!).
+
 Then `sbt run`!
 
 Maintainer
