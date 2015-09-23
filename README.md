@@ -39,7 +39,7 @@ hub pull-request
 
 Fix issse while building 
 ============
-Following build the project you need to clone https://github.com/softprops/hubcat and change the scala and scalatest version.
+For building the project you need to clone https://github.com/softprops/hubcat and change the scala and scalatest version.
 
 In  build.sbt change 
 scalaVersion := "2.11.7"
