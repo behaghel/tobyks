@@ -36,3 +36,14 @@ hub fork
 hub push YOUR_GITHUB_LOGIN my-feature
 hub pull-request
 ```
+
+Fix issse while building 
+============
+Following build the project you need to clone https://github.com/softprops/hubcat and change the scala and scalatest version.
+
+In  build.sbt change 
+scalaVersion := "2.11.7"
+and 
+libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.4" % "test"
+
+Also you need to publishLocal to create repos in ivy locally
