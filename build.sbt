@@ -19,3 +19,9 @@ libraryDependencies ++=
     "com.github.scullxbones" %% "akka-persistence-mongo-rxmongo" % "0.4.1",
     "org.reactivemongo" %% "reactivemongo" % "0.11.4"
   )
+
+enablePlugins(JavaAppPackaging)
+
+herokuProcessTypes in Compile := Map(
+ "tobyks" -> "target/universal/stage/bin/tobyks"
+)
